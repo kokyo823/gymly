@@ -6,17 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		288074CC2CD7C24000D9EF86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 288074C32CD7C24000D9EF86 /* Preview Assets.xcassets */; };
+		288074CD2CD7C24000D9EF86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 288074C92CD7C24000D9EF86 /* Assets.xcassets */; };
+		288074CE2CD7C24000D9EF86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288074C72CD7C24000D9EF86 /* ContentView.swift */; };
+		288074CF2CD7C24000D9EF86 /* gymlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288074CA2CD7C24000D9EF86 /* gymlyApp.swift */; };
+		288074D12CD7C78700D9EF86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288074D02CD7C78700D9EF86 /* Color.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		288074A42CD7BE9F00D9EF86 /* gymly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gymly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		288074C32CD7C24000D9EF86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		288074C72CD7C24000D9EF86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		288074C92CD7C24000D9EF86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		288074CA2CD7C24000D9EF86 /* gymlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymlyApp.swift; sourceTree = "<group>"; };
+		288074D02CD7C78700D9EF86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		288074A62CD7BE9F00D9EF86 /* gymly */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = gymly;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		288074A12CD7BE9F00D9EF86 /* Frameworks */ = {
@@ -32,7 +37,7 @@
 		2880749B2CD7BE9F00D9EF86 = {
 			isa = PBXGroup;
 			children = (
-				288074A62CD7BE9F00D9EF86 /* gymly */,
+				288074CB2CD7C24000D9EF86 /* gymly */,
 				288074A52CD7BE9F00D9EF86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +48,58 @@
 				288074A42CD7BE9F00D9EF86 /* gymly.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		288074C22CD7C24000D9EF86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		288074C42CD7C24000D9EF86 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				288074C32CD7C24000D9EF86 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		288074C52CD7C24000D9EF86 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				288074D02CD7C78700D9EF86 /* Color.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		288074C62CD7C24000D9EF86 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		288074C82CD7C24000D9EF86 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				288074C72CD7C24000D9EF86 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		288074CB2CD7C24000D9EF86 /* gymly */ = {
+			isa = PBXGroup;
+			children = (
+				288074C22CD7C24000D9EF86 /* Models */,
+				288074C82CD7C24000D9EF86 /* Views */,
+				288074C62CD7C24000D9EF86 /* ViewModels */,
+				288074C52CD7C24000D9EF86 /* Utils */,
+				288074C42CD7C24000D9EF86 /* Preview Content */,
+				288074C92CD7C24000D9EF86 /* Assets.xcassets */,
+				288074CA2CD7C24000D9EF86 /* gymlyApp.swift */,
+			);
+			path = gymly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +116,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				288074A62CD7BE9F00D9EF86 /* gymly */,
 			);
 			name = gymly;
 			packageProductDependencies = (
@@ -109,6 +163,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288074CC2CD7C24000D9EF86 /* Preview Assets.xcassets in Resources */,
+				288074CD2CD7C24000D9EF86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +175,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288074CE2CD7C24000D9EF86 /* ContentView.swift in Sources */,
+				288074CF2CD7C24000D9EF86 /* gymlyApp.swift in Sources */,
+				288074D12CD7C78700D9EF86 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
