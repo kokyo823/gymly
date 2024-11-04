@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var reps: Int = 0
     @State private var sets: [SetRecord] = []
     @State private var memo: String = ""
+    @FocusState private var isTextFieldFocused: Bool
     
     var body: some View {
         VStack(spacing: 20) {
@@ -25,19 +26,44 @@ struct ContentView: View {
             //kg・repsの編集部分
             VStack {
                 HStack {
-                    StepperButton(label: "-", action: { weight -= 0.5 })
-                    Text("\(weight, specifier: "%.1f") kg")
-                        .font(.largeTitle)
-                        .bold()
-                    StepperButton(label: "+", action: { weight += 0.5 })
+                    StepperButton(label: "-", action: { weight =  max(weight - 2.5 ,-999) })
+                    HStack {
+                            TextField("0.0", value: $weight, format: .number.precision(.fractionLength(1)))
+                                .font(.largeTitle)
+                                .bold()
+                                .multilineTextAlignment(.center)
+                                .frame(width: 100)
+                                .keyboardType(.decimalPad)
+                                .focused($isTextFieldFocused) // フォーカスの管理
+                                                .toolbar {
+                                                    ToolbarItem(placement: .keyboard) { // キーボードツールバーにOKボタンを追加
+                                                        Button("OK") {
+                                                            isTextFieldFocused = false // フォーカスを外してキーボードを閉じる
+                                                        }
+                                                    }
+                                                }
+                                .onChange(of: weight) {
+                                    // 入力された値が範囲外の場合、制限を適用
+                                    if weight > 999 {
+                                        weight = 999
+                                    } else if weight < -999 {
+                                        weight = -999
+                                    }
+                                }
+                            Text("kg") // 単位の表示
+                                .font(.largeTitle)
+                                .bold()
+                        }
+                    
+                    StepperButton(label: "+", action: {weight = min(weight + 2.5, 999) })
                 }
                 
                 HStack {
-                    StepperButton(label: "-", action: { reps = max(reps - 1, 1) })
+                    StepperButton(label: "-", action: { reps = max(reps - 1, 0) })
                     Text("\(reps) reps")
                         .font(.largeTitle)
                         .bold()
-                    StepperButton(label: "+", action: { reps += 1 })
+                    StepperButton(label: "+", action: { reps = min(reps + 1, 99)})
                 }
             }
             
